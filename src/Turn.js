@@ -3,14 +3,10 @@ class Turn {
     this.guess = guess;
     this.card = card;
   }
+  
+  returnGuess = () => (this.guess);
 
-  returnGuess() {
-    return this.guess;
-  }
-
-  returnCard() {
-    return this.card;
-  }
+  returnCard = () => (this.card);
 }
 
 module.exports = Turn;
