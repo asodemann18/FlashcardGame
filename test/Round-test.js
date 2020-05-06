@@ -97,13 +97,13 @@ describe('Round', function() {
 
   it('should update the incorrect guess array when an answer is wrong', function() {
     const card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
-      const card2 = new Card(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
-      const card3 = new Card(12, 'What is Travis\'s favorite stress reliever?', ['listening to music', 'watching Netflix', 'playing with bubble wrap'], 'playing with bubble wrap');
-      const deck = new Deck([card1, card2, card3]);
-      const round = new Round(deck);
-      var myTurn = round.takeTurn('pug');
-      expect(round.incorrectGuesses).to.deep.equal([1])
-    })
+    const card2 = new Card(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
+    const card3 = new Card(12, 'What is Travis\'s favorite stress reliever?', ['listening to music', 'watching Netflix', 'playing with bubble wrap'], 'playing with bubble wrap');
+    const deck = new Deck([card1, card2, card3]);
+    const round = new Round(deck);
+    const myTurn = round.takeTurn('pug');
+    expect(round.incorrectGuesses).to.deep.equal([1])
+  })
 
   it('should evaluate guesses', function() {
     const card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
@@ -111,7 +111,7 @@ describe('Round', function() {
     const card3 = new Card(12, 'What is Travis\'s favorite stress reliever?', ['listening to music', 'watching Netflix', 'playing with bubble wrap'], 'playing with bubble wrap');
     const deck = new Deck([card1, card2, card3]);
     const round = new Round(deck);
-    var myTurn = round.takeTurn('pug');
+    const myTurn = round.takeTurn('pug');
     expect(myTurn).to.equal('incorrect!')
   })
 
@@ -121,9 +121,9 @@ describe('Round', function() {
     const card3 = new Card(12, 'What is Travis\'s favorite stress reliever?', ['listening to music', 'watching Netflix', 'playing with bubble wrap'], 'playing with bubble wrap');
     const deck = new Deck([card1, card2, card3]);
     const round = new Round(deck);
-    var myTurn = round.takeTurn('pug');
-    var myTurn2 = round.takeTurn('gallbladder');
-    var correctPercent = round.calculatePercentCorrect();
+    const myTurn = round.takeTurn('pug');
+    const myTurn2 = round.takeTurn('gallbladder');
+    const correctPercent = round.calculatePercentCorrect();
     expect(correctPercent).to.equal(50);
   })
 });

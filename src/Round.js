@@ -25,7 +25,8 @@ class Round {
   }
 
   calculatePercentCorrect = () => {
-
+    let wrongCount = this.incorrectGuesses.length
+    return ((this.turns - wrongCount) / this.turns) * 100
   }
 }
 

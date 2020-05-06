@@ -29,7 +29,7 @@ describe('Deck', function() {
     const card2 = new Card(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
     const card3 = new Card(12, 'What is Travis\'s middle name?', ['Lex', 'William', 'Fitzgerald'], 'Fitzgerald');
     const deck = new Deck([card1, card2, card3]);
-    var cardCounts = deck.countCards();
+    const cardCounts = deck.countCards();
     expect(cardCounts).to.equal(3);
   });
 });
