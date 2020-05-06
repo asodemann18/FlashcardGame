@@ -114,4 +114,16 @@ describe('Round', function() {
     var myTurn = round.takeTurn('pug');
     expect(myTurn).to.equal('incorrect!')
   })
+
+  it('should calculate percent correct', function() {
+    const card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
+    const card2 = new Card(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
+    const card3 = new Card(12, 'What is Travis\'s favorite stress reliever?', ['listening to music', 'watching Netflix', 'playing with bubble wrap'], 'playing with bubble wrap');
+    const deck = new Deck([card1, card2, card3]);
+    const round = new Round(deck);
+    var myTurn = round.takeTurn('pug');
+    var myTurn2 = round.takeTurn('gallbladder');
+    var correctPercent = round.calculatePercentCorrect();
+    expect(correctPercent).to.equal(50);
+  })
 });
