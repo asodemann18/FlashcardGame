@@ -35,5 +35,3 @@ class Round {
 }
 
 module.exports = Round;
-
-// endRound: method that prints the following to the console: ‘** Round over! ** You answered <>% of the questions correctly!’
