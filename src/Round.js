@@ -6,6 +6,7 @@ class Round {
   }
 
   returnCurrentCard = () => {
+    this.currentCard = this.deck[this.turns];
     return this.currentCard;
   }
 }
