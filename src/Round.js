@@ -17,6 +17,11 @@ class Round {
     let theTurn = new Turn(guess, this.currentCard);
     this.turns++;
     this.returnCurrentCard();
+    theTurn.evaluateGuess();
+    theTurn.giveFeedback();
+    if (theTurn.correct === false) {
+      this.incorrectGuesses.push(theTurn.card.id);
+    }
   }
 }
 
