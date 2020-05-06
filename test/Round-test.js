@@ -126,4 +126,30 @@ describe('Round', function() {
     const correctPercent = round.calculatePercentCorrect();
     expect(correctPercent).to.equal(50);
   })
+
+  it('should print a message when a round is ended', function() {
+    const card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
+    const card2 = new Card(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
+    const card3 = new Card(12, 'What is Travis\'s favorite stress reliever?', ['listening to music', 'watching Netflix', 'playing with bubble wrap'], 'playing with bubble wrap');
+    const deck = new Deck([card1, card2, card3]);
+    const round = new Round(deck);
+    const myTurn = round.takeTurn('pug');
+    const myTurn2 = round.takeTurn('gallbladder');
+    const myTurn3 = round.takeTurn('playing with bubble wrap');
+    const roundEnded = round.endRound();
+    expect(roundEnded).to.equal('** Round over! ** You answered 67% of the questions correctly!');
+  })
+
+  it('should be able to have a different percentage correct', function() {
+    const card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
+    const card2 = new Card(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
+    const card3 = new Card(12, 'What is Travis\'s favorite stress reliever?', ['listening to music', 'watching Netflix', 'playing with bubble wrap'], 'playing with bubble wrap');
+    const deck = new Deck([card1, card2, card3]);
+    const round = new Round(deck);
+    const myTurn = round.takeTurn('pug');
+    const myTurn2 = round.takeTurn('spleen');
+    const myTurn3 = round.takeTurn('playing with bubble wrap');
+    const roundEnded = round.endRound();
+    expect(roundEnded).to.equal('** Round over! ** You answered 33% of the questions correctly!');
+  })
 });

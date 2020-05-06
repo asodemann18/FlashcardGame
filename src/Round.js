@@ -26,10 +26,14 @@ class Round {
 
   calculatePercentCorrect = () => {
     let wrongCount = this.incorrectGuesses.length
-    return ((this.turns - wrongCount) / this.turns) * 100
+    return Math.round(((this.turns - wrongCount) / this.turns) * 100)
+  }
+
+  endRound = () => {
+    return `** Round over! ** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`;
   }
 }
 
 module.exports = Round;
 
-// calculatePercentCorrect: method that calculates and returns the percentage of correct guesses
+// endRound: method that prints the following to the console: ‘** Round over! ** You answered <>% of the questions correctly!’
