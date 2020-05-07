@@ -8,15 +8,15 @@ const Deck = require('../src/Deck');
 class Game {
   constructor(theRound) {
     this.currentRound = theRound;
+    this.cards = []
   }
 
   start = () => {
-    let cards = []
     for (let i = 0; i < prototypeQuestions.length; i++) {
       const card = new Card(prototypeQuestions[i].id, prototypeQuestions[i].question,prototypeQuestions[i].answers, prototypeQuestions[i].correctAnswer )
-      cards.push(card);
+      this.cards.push(card);
     }
-    const deck = new Deck(cards);
+    const deck = new Deck(this.cards);
     let cardDeck = deck.cards;
     const round = new Round(deck);
     this.printMessage(deck, round);

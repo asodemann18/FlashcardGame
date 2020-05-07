@@ -23,8 +23,8 @@ describe('Game', function() {
 
   it('should create a card for each element', function() {
     const game = new Game();
-    const theStart = game.start();
-    expect(theStart[0]).to.deep.equal(prototypeQuestions[0]);
+    game.start();
+    expect(game.cards[0]).to.deep.equal(prototypeQuestions[0]);
   })
 
   it('should create a deck of cards', function() {
