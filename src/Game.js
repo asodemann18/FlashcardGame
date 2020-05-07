@@ -6,8 +6,8 @@ const Card = require('../src/Card');
 const Deck = require('../src/Deck');
 
 class Game {
-  constructor() {
-  //  this.currentRound = theRound;
+  constructor(theRound) {
+    this.currentRound = theRound;
   }
 
   start = () => {
@@ -18,6 +18,9 @@ class Game {
     }
     const deck = new Deck(cards);
     let cardDeck = deck.cards;
+    const round = new Round(deck);
+  //  this.printMessage(deck, round);
+  //  this.printQuestion(round);
     return cardDeck;
   }
 
@@ -32,5 +35,5 @@ class Game {
 }
 module.exports = Game;
 
-
+//Creates a new Round using the Deck
 //Should keep track of the currentRound
