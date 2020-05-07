@@ -1,11 +1,21 @@
 const data = require('./data');
 const prototypeQuestions = data.prototypeData;
 const util = require('./util');
-const Turn = require('../src/Round');
+const Round = require('../src/Round');
+const Card = require('../src/Card');
 
 class Game {
-  constructor(theRound) {
-    this.currentRound = theRound;
+  constructor() {
+  //  this.currentRound = theRound;
+  }
+
+  start = () => {
+    let cards = []
+    for (let i = 0; i < prototypeQuestions.length; i++) {
+      const card = new Card(prototypeQuestions[i].id, prototypeQuestions[i].question,prototypeQuestions[i].answers, prototypeQuestions[i].correctAnswer )
+      cards.push(card);
+    }
+    return cards;
   }
 
   printMessage(deck, round) {
@@ -19,5 +29,5 @@ class Game {
 }
 module.exports = Game;
 
-
+//Creates Cards
 //Should keep track of the currentRound
