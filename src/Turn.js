@@ -17,9 +17,9 @@ class Turn {
 
   giveFeedback = () => {
     if (this.correct === false) {
-      return 'incorrect!'
+      return 'incorrect!';
     } else {
-      return 'correct!'
+      return 'correct!';
     }
   }
 }

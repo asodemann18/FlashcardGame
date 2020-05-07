@@ -1,5 +1,5 @@
 const http = require('http');
-const Game = require(  '/Users/alexandriasodemann/Desktop/turingProject2/flashCardGame/src/Game.js');
+const Game = require('./src/Game');
 let app = http.createServer();
 
 // Start the server on port 3000
