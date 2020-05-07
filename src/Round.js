@@ -9,8 +9,7 @@ class Round {
   }
 
   returnCurrentCard = () => {
-    this.currentCard = this.deck[this.turns];
-    return this.currentCard;
+    return this.currentCard = this.deck[this.turns];
   }
 
   takeTurn = (guess) => {
@@ -25,8 +24,8 @@ class Round {
   }
 
   calculatePercentCorrect = () => {
-    let wrongCount = this.incorrectGuesses.length
-    return Math.round(((this.turns - wrongCount) / this.turns) * 100)
+    let wrongCount = this.incorrectGuesses.length;
+    return Math.round(((this.turns - wrongCount) / this.turns) * 100);
   }
 
   endRound = () => {
