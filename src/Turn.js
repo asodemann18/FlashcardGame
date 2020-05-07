@@ -10,17 +10,11 @@ class Turn {
   returnCard = () => (this.card);
 
   evaluateGuess = () => {
-    if (this.guess === this.card.correctAnswer) {
-      this.correct = true;
-    }
+    this.guess === this.card.correctAnswer ? this.correct = true : this.correct = false;
   }
 
   giveFeedback = () => {
-    if (this.correct === false) {
-      return 'incorrect!';
-    } else {
-      return 'correct!';
-    }
+    return (this.correct === false ? 'incorrect!' : 'correct!');
   }
 }
 
