@@ -19,8 +19,8 @@ class Game {
     const deck = new Deck(cards);
     let cardDeck = deck.cards;
     const round = new Round(deck);
-  //  this.printMessage(deck, round);
-  //  this.printQuestion(round);
+    this.printMessage(deck, round);
+    this.printQuestion(round);
     return cardDeck;
   }
 
@@ -33,7 +33,5 @@ class Game {
       util.main(round);
   }
 }
-module.exports = Game;
 
-//Creates a new Round using the Deck
-//Should keep track of the currentRound
+module.exports = Game;
