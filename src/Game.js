@@ -3,6 +3,7 @@ const prototypeQuestions = data.prototypeData;
 const util = require('./util');
 const Round = require('../src/Round');
 const Card = require('../src/Card');
+const Deck = require('../src/Deck');
 
 class Game {
   constructor() {
@@ -15,7 +16,9 @@ class Game {
       const card = new Card(prototypeQuestions[i].id, prototypeQuestions[i].question,prototypeQuestions[i].answers, prototypeQuestions[i].correctAnswer )
       cards.push(card);
     }
-    return cards;
+    const deck = new Deck(cards);
+    let cardDeck = deck.cards;
+    return cardDeck;
   }
 
   printMessage(deck, round) {
@@ -29,5 +32,5 @@ class Game {
 }
 module.exports = Game;
 
-//Creates Cards
+
 //Should keep track of the currentRound

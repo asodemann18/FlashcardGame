@@ -40,6 +40,6 @@ describe('Game', function() {
   it('should create a deck of cards', function() {
     const game = new Game();
     const theStart = game.start();
-    expect(theStart[0]).to.deep.equal(prototypeQuestions[0]);
+    expect(theStart).to.deep.equal(prototypeQuestions);
   })
 })
