@@ -1,4 +1,4 @@
-# FlashCards Game
+# Flashcards Game
 
 ## Project By: [Alex Sodemann](https://github.com/asodemann18)
 
