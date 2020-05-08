@@ -21,6 +21,7 @@ class Game {
     const round = new Round(deck);
     this.printMessage(deck, round);
     this.printQuestion(round);
+    round.endRound();
     return cardDeck;
   }
 
