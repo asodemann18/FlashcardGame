@@ -1,4 +1,4 @@
-# Flashcards Game
+# Flashcard Game
 
 ## Project By: [Alex Sodemann](https://github.com/asodemann18)
 
@@ -13,7 +13,7 @@ In this project, I wrote a program to simulate a set of flash cards through the 
 * Implement a robust testing suite using TDD
 
 ## In Action
-<img src="http://g.recordit.co/QFdCz5YG0F.gif"/>
+<img src="http://g.recordit.co/y5XGsb9ove.gif"/>
 
 ## Installation Instructions
 ```bash
